@@ -25,12 +25,12 @@ jobs:
           ssh -i private_key.pem -o StrictHostKeyChecking=no ubuntu@52.91.220.138 << 'EOF'
 
             cd /var/www/html
-            git fetch --all
+            # git fetch --all
             git reset --hard origin/main  # Setzt den Code auf die letzte GitHub-Version zurück
             git pull origin main
-            sudo chown -R www-data:www-data /var/www/html  # Besitzer setzen
-            sudo chmod -R 755 /var/www/html  # Sichere Berechtigungen setzen
-            sudo systemctl restart apache2  # Apache neustarten
+             #sudo chown -R www-data:www-data /var/www/html  # Besitzer setzen
+            sudo chmod -R 777 /var/www/html  # Sichere Berechtigungen setzen
+            # sudo systemctl restart apache2  # Apache neustarten
           EOF
           
           # SSH Key löschen
