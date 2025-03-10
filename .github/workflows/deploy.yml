@@ -22,7 +22,8 @@ jobs:
           chmod 600 private_key.pem
           
           # Git-Pull direkt auf dem Server ausführen
-          ssh -i private_key.pem -o StrictHostKeyChecking=no ubuntu@${{ secrets.ec2-52-91-220-138.compute-1.amazonaws.com }} << 'EOF'
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ubuntu@52.91.220.138 << 'EOF'
+
             cd /var/www/html
             git fetch --all
             git reset --hard origin/main  # Setzt den Code auf die letzte GitHub-Version zurück
